@@ -8,11 +8,13 @@ class App extends React.Component {
 		this.state = {
 			todos : [
 				{
+					id : 0,
 					title : "React",
 					desc : "コンポーネントを作る",
 					isDone: false
 				},
 				{
+					id : 1,
 					title : "LP作成",
 					desc : "レスポンシブ対応でLP作成",
 					isDone : false
@@ -26,6 +28,7 @@ class App extends React.Component {
 		const desc = e.target.desc.value
 		const newTodos = this.state.todos.slice()
 		newTodos.push({
+			id : this.state.todos.length,
 			title : title,
 			desc : desc,
 			isDone : false
@@ -34,11 +37,18 @@ class App extends React.Component {
 			todos : newTodos
 		})
 	}
+	handleClick(id) {
+		const newTodos = this.state.todos.slice()
+		newTodos[id].isDone =! newTodos[id].isDone
+		this.setState({
+			todos : newTodos
+		})
+	}
 	render() {
 		return (
 	  		<div>
 				<Form handleSubmit={this.handleSubmit.bind(this)}></Form>
-				<TodoList todos={this.state.todos}></TodoList>
+				<TodoList todos={this.state.todos} handleClick={this.handleClick.bind(this)}></TodoList>
 	  		</div>
 		)
   	}

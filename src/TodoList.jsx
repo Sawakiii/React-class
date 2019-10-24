@@ -8,9 +8,11 @@ export default class TodoList extends React.Component {
         let list = this.props.todos.map((todo, i)=>{
             return (
                 <TodoItem 
+                id={todo.id}
                 title={todo.title}
                 desc={todo.desc}
                 isDone={todo.isDone}
+                handleClick={this.props.handleClick}
                 ></TodoItem>
             )
         })
