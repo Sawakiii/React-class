@@ -20,10 +20,24 @@ class App extends React.Component {
 			]
 		}
 	}
+	handleSubmit(e) {
+		e.preventDefault()
+		const title = e.target.title.value
+		const desc = e.target.desc.value
+		const newTodos = this.state.todos.slice()
+		newTodos.push({
+			title : title,
+			desc : desc,
+			isDone : false
+		})
+		this.setState({
+			todos : newTodos
+		})
+	}
 	render() {
 		return (
 	  		<div>
-				<Form></Form>
+				<Form handleSubmit={this.handleSubmit.bind(this)}></Form>
 				<TodoList todos={this.state.todos}></TodoList>
 	  		</div>
 		)
