@@ -13,6 +13,7 @@ export default class TodoList extends React.Component {
                 desc={todo.desc}
                 isDone={todo.isDone}
                 handleClick={this.props.handleClick}
+                handleClickDelete={this.props.handleClickDelete}
                 ></TodoItem>
             )
         })

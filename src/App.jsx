@@ -44,11 +44,32 @@ class App extends React.Component {
 			todos : newTodos
 		})
 	}
+	handleClickDelete(id) {
+		const DeletedTodos = this.state.todos.slice()
+		DeletedTodos.splice(id, 1)
+		DeletedTodos.map((todo, i)=>{
+			return (
+				todo.id = i,
+				todo.title = todo.title,
+				todo.desc = todo.desc,
+				todo.isDone = todo.isDone
+			)
+		})
+		let deleteConfirm = window.confirm("「" + this.state.todos[id].title + "」" + "を削除しますか?")
+		if (deleteConfirm) {
+			this.setState({
+				todos: DeletedTodos
+			})
+		}
+	}
 	render() {
 		return (
 	  		<div>
 				<Form handleSubmit={this.handleSubmit.bind(this)}></Form>
-				<TodoList todos={this.state.todos} handleClick={this.handleClick.bind(this)}></TodoList>
+				<TodoList todos={this.state.todos} 
+				handleClick={this.handleClick.bind(this)}
+				handleClickDelete={this.handleClickDelete.bind(this)}
+				></TodoList>
 	  		</div>
 		)
   	}

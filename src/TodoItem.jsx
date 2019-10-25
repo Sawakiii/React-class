@@ -7,10 +7,10 @@ export default class TodoItem extends React.Component {
         const handleClick = this.props.handleClick
         return (
             <li>
-                <p>{this.props.id}</p>
                 <p>{this.props.title}</p>
                 <p>{this.props.desc}</p>
                 <button onClick={()=>{handleClick(id)}}>{buttonText}</button>
+                <button onClick={()=>{this.props.handleClickDelete(id)}}>削除</button>
             </li>
         )
     }
