@@ -3,8 +3,6 @@ import TodoItem from "./TodoItem"
 
 export default class TodoList extends React.Component {
     render() {
-        
-        // 繰り返ししてliが入ったリストつくる。
         let list = this.props.todos.map((todo, i)=>{
             return (
                 <TodoItem 
@@ -12,8 +10,11 @@ export default class TodoList extends React.Component {
                 title={todo.title}
                 desc={todo.desc}
                 isDone={todo.isDone}
+                isEdit={todo.isEdit}
                 handleClick={this.props.handleClick}
                 handleClickDelete={this.props.handleClickDelete}
+                handleEdit={this.props.handleEdit}
+                handleEditSubmit={this.props.handleEditSubmit}
                 ></TodoItem>
             )
         })

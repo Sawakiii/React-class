@@ -11,13 +11,15 @@ class App extends React.Component {
 					id : 0,
 					title : "React",
 					desc : "コンポーネントを作る",
-					isDone: false
+					isDone: false,
+					isEdit: false
 				},
 				{
 					id : 1,
 					title : "LP作成",
 					desc : "レスポンシブ対応でLP作成",
-					isDone : false
+					isDone : false,
+					isEdit: false
 				}
 			]
 		}
@@ -31,7 +33,8 @@ class App extends React.Component {
 			id : this.state.todos.length,
 			title : title,
 			desc : desc,
-			isDone : false
+			isDone : false,
+			isEdit : false
 		})
 		this.setState({
 			todos : newTodos
@@ -52,7 +55,8 @@ class App extends React.Component {
 				todo.id = i,
 				todo.title = todo.title,
 				todo.desc = todo.desc,
-				todo.isDone = todo.isDone
+				todo.isDone = todo.isDone,
+				todo.isEdit = todo.isEdit
 			)
 		})
 		let deleteConfirm = window.confirm("「" + this.state.todos[id].title + "」" + "を削除しますか?")
@@ -62,6 +66,24 @@ class App extends React.Component {
 			})
 		}
 	}
+	handleEdit(id) {
+		const editTodos = this.state.todos.slice()
+		editTodos[id].isEdit = true
+		this.setState({
+			todos : editTodos
+		})
+	}
+	handleEditSubmit(e, id) {
+		const editedTodos = this.state.todos.slice()
+		const title = e.target.title.value
+		const desc = e.target.desc.value
+		editedTodos[id].title = title
+		editedTodos[id].desc = desc
+		editedTodos[id].isEdit = false
+		this.setState({
+			todos : editedTodos
+		})
+	}
 	render() {
 		return (
 	  		<div>
@@ -69,6 +91,8 @@ class App extends React.Component {
 				<TodoList todos={this.state.todos} 
 				handleClick={this.handleClick.bind(this)}
 				handleClickDelete={this.handleClickDelete.bind(this)}
+				handleEdit={this.handleEdit.bind(this)}
+				handleEditSubmit={this.handleEditSubmit.bind(this)}
 				></TodoList>
 	  		</div>
 		)
