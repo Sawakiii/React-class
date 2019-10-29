@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "http;//sawaki1998.github.io/React-class/static/css/main.34de6062.chunk.css",
+    "main.js": "http;//sawaki1998.github.io/React-class/static/js/main.df38ba02.chunk.js",
+    "main.js.map": "http;//sawaki1998.github.io/React-class/static/js/main.df38ba02.chunk.js.map",
+    "runtime-main.js": "http;//sawaki1998.github.io/React-class/static/js/runtime-main.bf798469.js",
+    "runtime-main.js.map": "http;//sawaki1998.github.io/React-class/static/js/runtime-main.bf798469.js.map",
+    "static/js/2.dbad9a56.chunk.js": "http;//sawaki1998.github.io/React-class/static/js/2.dbad9a56.chunk.js",
+    "static/js/2.dbad9a56.chunk.js.map": "http;//sawaki1998.github.io/React-class/static/js/2.dbad9a56.chunk.js.map",
+    "index.html": "http;//sawaki1998.github.io/React-class/index.html",
+    "precache-manifest.a4fa10ccd75c26d169172621e74d4e2e.js": "http;//sawaki1998.github.io/React-class/precache-manifest.a4fa10ccd75c26d169172621e74d4e2e.js",
+    "service-worker.js": "http;//sawaki1998.github.io/React-class/service-worker.js",
+    "static/css/main.34de6062.chunk.css.map": "http;//sawaki1998.github.io/React-class/static/css/main.34de6062.chunk.css.map"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.bf798469.js",
+    "static/js/2.dbad9a56.chunk.js",
+    "static/css/main.34de6062.chunk.css",
+    "static/js/main.df38ba02.chunk.js"
+  ]
+}
