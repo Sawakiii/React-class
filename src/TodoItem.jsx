@@ -1,4 +1,9 @@
 import React from "react"
+import styled from "styled-components"
+
+const Li = styled.li`
+list-style: none;
+`
 
 export default class TodoItem extends React.Component {
     render() {
@@ -26,9 +31,9 @@ export default class TodoItem extends React.Component {
             </div>
         }
         return (
-            <li>
+            <Li>
                 {todo}
-            </li>
+            </Li>
         )
     }
 }
