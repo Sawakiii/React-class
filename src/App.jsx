@@ -1,6 +1,11 @@
 import React from "react"
 import Form from "./Form"
 import TodoList from "./TodoList"
+import styled from "styled-components"
+
+const Container = styled.div`
+background-color: #F5F5F5;
+`
 
 class App extends React.Component {
 	constructor() {
@@ -86,7 +91,7 @@ class App extends React.Component {
 	}
 	render() {
 		return (
-	  		<div>
+	  		<Container>
 				<Form handleSubmit={this.handleSubmit.bind(this)}></Form>
 				<TodoList todos={this.state.todos} 
 				handleClick={this.handleClick.bind(this)}
@@ -94,7 +99,7 @@ class App extends React.Component {
 				handleEdit={this.handleEdit.bind(this)}
 				handleEditSubmit={this.handleEditSubmit.bind(this)}
 				></TodoList>
-	  		</div>
+	  		</Container>
 		)
   	}
 }
